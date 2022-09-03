@@ -26,4 +26,9 @@ export class WalletController {
   convert(@Body() data){
     return this.walletSerivce.convert(data.deposit, data.withdraw, data.amount)
   }
+
+  @Post("/check")
+  find(@Body() wallet){
+    return this.walletSerivce.findWallet(wallet.name)
+  }
 }

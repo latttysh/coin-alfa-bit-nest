@@ -33,4 +33,11 @@ export class WalletService {
     let res = await axios.get(`https://api.coinconvert.net/convert/${deposit}/${withdraw}?amount=${amount}`)
     return res.data
   }
+
+  async findWallet(wallet){
+    console.log(wallet);
+    // @ts-ignore
+    let result = await this.walletRepository.findOne({where : {name: wallet}})
+    return result
+  }
 }
