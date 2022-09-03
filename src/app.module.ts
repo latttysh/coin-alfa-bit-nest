@@ -10,6 +10,7 @@ import { Wallet } from "./wallet/wallet.model";
   providers: [],
   imports: [
     SequelizeModule.forRoot({
+      // @ts-ignore
       dialect: "postgres",
       host: "localhost",
       port: 5432,

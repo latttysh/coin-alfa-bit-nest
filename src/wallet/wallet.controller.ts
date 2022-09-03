@@ -21,4 +21,9 @@ export class WalletController {
   delete(@Body() id){
     return this.walletSerivce.deleteWallet(id)
   }
+
+  @Post("/convert")
+  convert(@Body() data){
+    return this.walletSerivce.convert(data.deposit, data.withdraw, data.amount)
+  }
 }
